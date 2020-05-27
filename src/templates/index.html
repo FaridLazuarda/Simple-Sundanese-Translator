@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Simple Sundanese Translator</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body style="background-color: #ffc107;">
+    <div class="container title">
+        <div class="jumbotron" style="background-color: #ffc107; margin-bottom: 0;">
+            <h1 class="display-4" style="text-align: center;">Simple Sundanese Translator</h1>
+        </div>
+    </div>  
+
+    <form action="" method="post" id = "">
+        <div style="margin-bottom: 20px;" class = "container d-flex justify-content-center">
+            <div class = "row">
+                <div class = "col">
+                    <label style="font-size: large; margin-top: 7px;">Select Language  :</label>
+                </div>
+                <div class="col">
+                    <select name="language" class="form-control">
+                        <option value="">Select Language</option>    
+                        <option id="indo" name = "language" value="indo">Indonesia - Sunda</option>
+                        <option id="sunda" name = "language" value="sunda">Sunda - Indonesia</option>
+                    </select>
+                </div>
+
+                <div class = "col">
+                    <label style="font-size: large; margin-top: 7px;">Select Algorithm  :</label>
+                </div>
+                <div class="col">
+                    <select name="algorithm" class="form-control">
+                        <option value="">Select Algorithm</option>    
+                        <option id="bm" name = "algorithm" value="bm">Boyer Moore</option>
+                        <option id="kmp" name = "algorithm" value="kmp">Knuth-Morris-Pratt</option>
+                        <option id="regex" name = "algorithm" value="regex">Regular Expression</option>
+                    </select>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <textarea style="background-color: #343A40;color: #fff;" class="form-control" name="inputText" placeholder="Enter text here...", rows = '8'>{{inputText}}</textarea>
+                </div>
+                <div class="col">
+                    <textarea class="form-control" readonly name="resultText" placeholder="Translation", rows = '8'>{{translatedText}}</textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container d-flex justify-content-center" id="trans">
+            <button style="margin-top: 50px;" type="button submit" class="btn btn-dark btn-lg download-button" value="submit"><i class="fas fa-language"></i> Translate</button>
+        </div>
+    </form>
+
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="margin-top: 128px; padding: 50px;">
+        <div class="container text-center">
+          <small>Copyright &copy; Muhammad Farid Adilazuarda</small>
+          <br>
+          <a href="/about" style="font-size: 0.9rem;color: #f1f1f1;">about</a>
+          <a href="/guide" style="font-size: 0.9rem;color: #f1f1f1; margin-left: 40px;">guide</a>
+        </div>
+    </footer>
+</body>
+</html>
